@@ -1,0 +1,47 @@
+#######################################
+# Syntax Coloring Map AnalogIO
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+AnalogController    KEYWORD1
+AnalogIn    KEYWORD1
+AnalogOut   KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+setValue    KEYWORD2
+setSpeed    KEYWORD2
+getValue    KEYWORD2
+getSpeed    KEYWORD2
+getDevice   KEYWORD2
+getResolution   KEYWORD2
+getMaxValue KEYWORD2
+readValue   KEYWORD2
+read    KEYWORD2
+writeValue  KEYWORD2
+write   KEYWORD2
+blink   KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+MIN_SPEED   LITERAL1
+MAX_SPEED   LITERAL1
+VALUE_NONE  LITERAL1
+MIN_VALUE_BIT   LITERAL1
+MAX_VALUE_BIT4  LITERAL1
+MAX_VALUE_BIT6  LITERAL1
+MAX_VALUE_BIT8  LITERAL1
+MAX_VALUE_BIT10 LITERAL1
+MAX_VALUE_BIT12 LITERAL1
+NONE    LITERAL1
+BIT4    LITERAL1
+BIT6    LITERAL1
+BIT8    LITERAL1
+BIT10   LITERAL1
+BIT12   LITERAL1
+POTENTIOMETER   LITERAL1
+ENCODER LITERAL1
