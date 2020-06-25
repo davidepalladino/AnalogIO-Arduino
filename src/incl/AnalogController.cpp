@@ -55,6 +55,8 @@ void AnalogController::readValue() {
 uint8_t AnalogController::getSpeed() {
     if (getObjIn() != NULL) {
         return getObjIn()->getSpeed();
+    } else {
+        return 0;
     }
 }
 

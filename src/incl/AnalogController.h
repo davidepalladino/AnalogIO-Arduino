@@ -60,7 +60,7 @@
 
             /**
              * This method gets the speed of variation of the value, if the device is an encoder.
-             * @return Value between "MIN_SPEED" and "MAX_SPEED"; 0 if the device is a potentiometer.
+             * @return Value between "MIN_SPEED" and "MAX_SPEED"; 0 if the device is a potentiometer or "objIn" doesn't exist.
              */
             uint8_t getSpeed();
 
