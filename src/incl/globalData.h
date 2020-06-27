@@ -1,7 +1,7 @@
 #pragma once
 
 #ifndef ARDUINO_H
-        #include <Arduino.h>
+        #include <Arduino.h>                    // Import the Arduino library.
 #endif
 
 #define MIN_SPEED 1
