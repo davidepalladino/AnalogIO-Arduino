@@ -34,7 +34,7 @@
             /** 
              * This constructor creates the main object, setting the pointers to the objects where the value will be read and/or write.
              * @param objIn Pointer to object where the value will be read. Set it to "NULL" if will be not used.
-             * @param objOut Pointer to object where the value will be writte. Set it to "NULL" if will be not used.
+             * @param objOut Pointer to object where the value will be written. Set it to "NULL" if will be not used.
              */
             AnalogController(AnalogIn* objIn, AnalogOut* objOut);
 
@@ -94,7 +94,7 @@
 
         private:
             AnalogIn* objIn;               // Pointer to object where the value will be read. This parameter will be "NULL" if is not set.
-            AnalogOut* objOut;             // Pointer to object where the value will be write. This parameter will be "NULL" if is not set.
+            AnalogOut* objOut;             // Pointer to object where the value will be witten. This parameter will be "NULL" if is not set.
             int32_t value;                 // Current value read, write or set externally.
 
             /**
@@ -104,8 +104,8 @@
             void setObjIn(AnalogIn* objIn);
 
             /**
-             * This method sets the pointer to object where the value will be write.
-             * @param objOut Pointer to object where the value will be write.
+             * This method sets the pointer to object where the value will be written.
+             * @param objOut Pointer to object where the value will be written.
              */
             void setObjOut(AnalogOut* objOut);
 
@@ -116,7 +116,7 @@
             AnalogIn* getObjIn();
 
             /**
-             * This method gets the pointer to object where the value will be write.
+             * This method gets the pointer to object where the value will be written.
              * @return Pointer to object.
              */
             AnalogOut* getObjOut();            
