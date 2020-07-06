@@ -53,7 +53,7 @@ void AnalogController::readValue() {
 }
 
 
-uint16_t AnalogController::getMaxValueIn() {
+int32_t AnalogController::getMaxValueIn() {
     if (getObjIn() != NULL) {
         return getObjIn()->getMaxValue();
     } else {

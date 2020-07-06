@@ -62,7 +62,7 @@
              * This method gets the max value of "objIn".
              * @return Max value of "objIn" or 0 if "objIn" doesn't exist.
              */
-            uint16_t getMaxValueIn();
+            int32_t getMaxValueIn();
 
             /**
              * This method gets the max value of "objOut".

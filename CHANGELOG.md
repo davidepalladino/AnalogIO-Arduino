@@ -7,8 +7,8 @@ In this document there is the story about the various versions. See the [Wiki](h
 
 **Changed**
 * Value of `VALUE_NONE` from `0` to the max value of 32 bit.
-* Return type of `getMaxValue` from `uint16_t` to `int32_t`.
-* Parameter `timeOut` type from `uint8_t` to `uint32_t`.
+* Return type of `getMaxValue`, for `AnalogIn`, from `uint16_t` to `int32_t`.
+* Parameter type of `timeOut`, for `AnalogController`, from `uint8_t` to `uint32_t`.
 
 **Fixed**
 * Bug related to emulation of analog pins.
