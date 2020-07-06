@@ -6,8 +6,8 @@
   * 
   * @author Davide Palladino
   * @contact davidepalladino@hotmail.com
-  * @version 1.0
-  * @date 21th June, 2020
+  * @version 1.1.1
+  * @date 6th July, 2020
   * 
   * This library is free software; you can redistribute it and/or
   *  modify it under the terms of the GNU General Public
@@ -63,7 +63,7 @@
              * @param pinA First digital pin where the value will be read.
              * @param pinB Second digital pin where the value will be read.
              * @param resolution Resolution of reading between "NONE", "BIT4", "BIT6", "BIT8", "BIT10" and "BIT12". 
-             *  If you set to "NONE", the min and max value will not be considered.
+             *  If you set to "NONE", the min and max value will be that the possible at 32 bit.
              */
             AnalogIn(uint8_t pinA, uint8_t pinB, resolution_t resolution);
 
@@ -75,9 +75,9 @@
 
             /**
              * This method gets the max value that can be read. 
-             * @return Max value that can be read, or 0 if the resolution is set to "NONE".
+             * @return Max value that can be read, or the max possible at 32 bit if the resolution is set to "NONE".
              */
-            uint16_t getMaxValue();
+            int32_t getMaxValue();
 
             /**
              * This method gets the speed of variation of the value, if the device is an encoder.
@@ -94,7 +94,7 @@
              /**
              * This method reads the value from an encoder. Moreover, there will be the debouncing.
              * @param value Original value to start.
-             * @return Value between "MIN_VALUE_BIT" and "maxValue", incremented/decremented according to the speed value. If the resolution is set to "NONE" there will be not min and max.
+             * @return Value between "MIN_VALUE_BIT" and "maxValue", incremented/decremented according to the speed value. If the resolution is set to "NONE", the min and max value will be that the possible at 32 bit.
              */     
             int32_t read(int32_t value);
 
@@ -103,7 +103,7 @@
             uint8_t pinB;                       // Pin where the value will be read if the device is an encoder.
             device_t device;                    // Type of device, between "POTENTIOMETER" and "ENCODER".
             resolution_t resolution;            // Type of resolution.
-            uint16_t maxValue;                  // Max value that can be read.
+            int32_t maxValue;                   // Max value that can be read.
             uint8_t speed;                      // Speed of variation of the value, if the device is an encoder.
             uint8_t lastStatusEncoder;          // Last status of the encoder, to allow the debouncing.
             bool emulatePinA;                   // Flag to indicate if the "pinA" will be emulated or not.
@@ -137,7 +137,7 @@
              * This method sets the max value that can be read.
              * @param maxValue Max value that can be read.
              */
-            void setMaxValue(uint16_t maxValue);
+            void setMaxValue(int32_t maxValue);
 
             /**
              * This method sets the last status of the encoder.

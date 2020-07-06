@@ -73,8 +73,8 @@ AnalogIn::AnalogIn(uint8_t pinA, uint8_t pinB, resolution_t resolution) {
 
     setLastStatusEncoder(HIGH);
 
-    setEmulatePinA((bool) digitalRead(getPinA()));
-    setEmulatePinB((bool) digitalRead(getPinB()));
+    setEmulatePinA((bool) !digitalRead(getPinA()));
+    setEmulatePinB((bool) !digitalRead(getPinB()));
 }
 
 void AnalogIn::setSpeed(uint8_t speed) {
@@ -90,7 +90,7 @@ void AnalogIn::setSpeed(uint8_t speed) {
     }
 }
 
-uint16_t AnalogIn::getMaxValue() { return this->maxValue; }
+int32_t AnalogIn::getMaxValue() { return this->maxValue; }
 
 uint8_t AnalogIn::getSpeed() { 
     /* Check if the device is an encoder. In this case, will return the speed; else will return 0. */
@@ -121,16 +121,16 @@ int32_t AnalogIn::read(int32_t value) {
         uint8_t currentStatusEncoder;
 
         /* Proceed with the first reading of the encoder, checking if the pin emulates or not the digital pin. */
-        if (!getEmulatePinA()) {
-            currentStatusEncoder = analogRead(getPinA()) > 100 ? 0 : 1;
+        if (getEmulatePinA()) {
+            currentStatusEncoder = analogRead(getPinA()) > 100 ? 1 : 0;
         } else {
             currentStatusEncoder = digitalRead(getPinA());
         }
 
         /* Proceed with the second reading of the encoder, checking if the pin emulates or not the digital pin. */
         if ((getLastStatusEncoder() == HIGH) && (currentStatusEncoder == LOW)) {
-            if (!getEmulatePinB()) {
-                if (analogRead(getPinB()) > 100 ? 0 : 1) {
+            if (getEmulatePinB()) {
+                if (analogRead(getPinB()) > 100 ? 1 : 0) {
                     value += getSpeed();
                 } else {
                     value -= getSpeed();
@@ -170,7 +170,7 @@ void AnalogIn::setDevice(device_t device) { this->device = device; }
 
 void AnalogIn::setResolution(resolution_t resolution) { this->resolution = resolution; }
 
-void AnalogIn::setMaxValue(uint16_t maxValue) { this-> maxValue = maxValue; }
+void AnalogIn::setMaxValue(int32_t maxValue) { this-> maxValue = maxValue; }
 
 void AnalogIn::setLastStatusEncoder(uint8_t lastStatusEncoder) { this->lastStatusEncoder = lastStatusEncoder; }
 
@@ -191,4 +191,3 @@ uint8_t AnalogIn::getLastStatusEncoder() { return this->lastStatusEncoder; }
 bool AnalogIn::getEmulatePinA() { return this->emulatePinA; }
 
 bool AnalogIn::getEmulatePinB() { return this->emulatePinB; }
-

@@ -8,7 +8,7 @@
 #include <AnalogIO.h>
 
 /* Creating the object for reading the value from an encoder. */
-AnalogIn encoder(4, 5, BIT6);
+AnalogIn encoder(A0, A1, BIT6);
 
 /* Creating the object for writing the value to a device. */
 AnalogOut led(9);
@@ -17,7 +17,7 @@ AnalogOut led(9);
 AnalogController controllerLed(&encoder, &led);
 
 void setup() {
-    Serial.begin(115200);
+    Serial.begin(57600);
 }
 
 void loop() {

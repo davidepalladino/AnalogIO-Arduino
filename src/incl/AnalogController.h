@@ -8,8 +8,8 @@
   * 
   * @author Davide Palladino
   * @contact davidepalladino@hotmail.com
-  * @version 1.0
-  * @date 21th June, 2020
+  * @version 1.1.1
+  * @date 6th July, 2020
   * 
   * This library is free software; you can redistribute it and/or
   *  modify it under the terms of the GNU General Public
@@ -59,6 +59,18 @@
             int32_t getValue();
 
             /**
+             * This method gets the max value of "objIn".
+             * @return Max value of "objIn" or 0 if "objIn" doesn't exist.
+             */
+            uint16_t getMaxValueIn();
+
+            /**
+             * This method gets the max value of "objOut".
+             * @return Max value of "objOut" or 0 if "objOut" doesn't exist.
+             */
+            uint16_t getMaxValueOut();
+
+            /**
              * This method gets the speed of variation of the value, if the device is an encoder.
              * @return Value between "MIN_SPEED" and "MAX_SPEED"; 0 if the device is a potentiometer or "objIn" doesn't exist.
              */
@@ -89,12 +101,12 @@
              * @param times The number of times.
              * @param timeOut The time from blink to another.
              */
-            void blink(uint8_t times, uint8_t timeOut);
+            void blink(uint8_t times, uint32_t timeOut);
 
 
         private:
             AnalogIn* objIn;               // Pointer to object where the value will be read. This parameter will be "NULL" if is not set.
-            AnalogOut* objOut;             // Pointer to object where the value will be witten. This parameter will be "NULL" if is not set.
+            AnalogOut* objOut;             // Pointer to object where the value will be written. This parameter will be "NULL" if is not set.
             int32_t value;                 // Current value read, write or set externally.
 
             /**

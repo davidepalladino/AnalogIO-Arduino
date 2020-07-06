@@ -19,6 +19,8 @@ getSpeed    KEYWORD2
 getDevice   KEYWORD2
 getResolution   KEYWORD2
 getMaxValue KEYWORD2
+getMaxValueIn   KEYWORD2
+getMaxValueOut  KEYWORD2
 readValue   KEYWORD2
 read    KEYWORD2
 writeValue  KEYWORD2

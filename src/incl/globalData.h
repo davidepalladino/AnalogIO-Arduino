@@ -1,13 +1,17 @@
 #pragma once
 
 #ifndef ARDUINO_H
-        #include <Arduino.h>                    // Import the Arduino library.
+        #include <Arduino.h>
+#endif
+
+#ifndef MATH_H
+        #include <math.h>
 #endif
 
 #define MIN_SPEED 1
 #define MAX_SPEED 16
 
-#define VALUE_NONE 0
+#define VALUE_NONE (int32_t) (pow(2, sizeof(int32_t) * 8) / 2)
 #define MIN_VALUE_BIT 0
 #define MAX_VALUE_BIT4 15
 #define MAX_VALUE_BIT6 64
