@@ -1,3 +1,5 @@
+# [WARNING] This library doesn't work with ESP family microcontrollers. An update is in beta phase.
+
 # AnalogIO library for Arduino
 ## Description
 This library allows to read a value from an analog input like an potentiometer, or from a digital input like an encoder. Moreover, allows to write it on digital output, exactly on PWM pin. You can specify the device, and the resolution of reading and writing. If you want, there is a controller class that manages an object AnalogIn and/or an object AnalogOut, without worrying about the normalization if the resolutions of the objects are different.
