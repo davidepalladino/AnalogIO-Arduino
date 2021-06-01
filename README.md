@@ -1,4 +1,4 @@
-# [WARNING] This library doesn't work with ESP family microcontrollers. An update is in beta phase.
+# WARNING: This library doesn't work with ESP family microcontrollers. An update is in beta phase.
 
 # AnalogIO library for Arduino
 ## Description
